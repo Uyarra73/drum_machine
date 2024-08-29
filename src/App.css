@@ -30,6 +30,13 @@ h1 {
   box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.5);
 }
 
+#display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
 .drum-pad {
   display: flex;
   align-items: center;

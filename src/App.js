@@ -3,6 +3,8 @@ import "./App.css";
 
 function App() {
 
+  const [displayKeyboard, setDisplayKeyboard] = useState('');
+
   useEffect(() => {
     document.addEventListener('keydown', (event) => {
       playSound(event.key.toUpperCase())
@@ -60,6 +62,7 @@ function App() {
   const playSound = (selector) => {
     const audio = document.getElementById(selector);
     audio.play();
+    setDisplayKeyboard(selector);
   };
 
   
@@ -67,7 +70,7 @@ function App() {
     <div className="App">
       <h1>Drum Machine</h1>
       <div id="drum-machine">
-        <div id="display"></div>
+        <div id="display"><h2>Press a key: {displayKeyboard}</h2></div>
         <div className="pads-group">
           {drumKeys.map((drumPad) => {
             return (
